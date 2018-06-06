@@ -5,10 +5,15 @@ using UnityEngine;
 using UnityEngine.Playables;
 
 // A behaviour that is attached to a playable
-public class FaderPlayableBehaviour : PlayableBehaviour
+[System.Serializable]
+public class FaderBehaviour : PlayableBehaviour
 {
+    [HideInInspector]
     public CanvasGroup canvasGroup;
-    public FaderPlayableAsset.FadeDirection fadeDirection;
+
+    public FaderClip.FadeDirection fadeDirection;
+    public bool isUseCurve = false;
+    public AnimationCurve faderCurve = new AnimationCurve();
 
 
     // Called when the owning graph starts playing
@@ -30,12 +35,12 @@ public class FaderPlayableBehaviour : PlayableBehaviour
 
         switch (fadeDirection)
         {
-            case FaderPlayableAsset.FadeDirection.In:
+            case FaderClip.FadeDirection.In:
                 {
                     canvasGroup.alpha = 1.0f;
                     break;
                 }
-            case FaderPlayableAsset.FadeDirection.Out:
+            case FaderClip.FadeDirection.Out:
                 {
                     canvasGroup.alpha = 0.0f;
                     break;
@@ -47,15 +52,15 @@ public class FaderPlayableBehaviour : PlayableBehaviour
     public override void OnBehaviourPause(Playable playable, FrameData info)
     {
         Debug.Log(MethodInfo.GetCurrentMethod().Name);
-
+        
         switch (fadeDirection)
         {
-            case FaderPlayableAsset.FadeDirection.In:
+            case FaderClip.FadeDirection.In:
                 {
                     canvasGroup.alpha = 0.0f;
                     break;
                 }
-            case FaderPlayableAsset.FadeDirection.Out:
+            case FaderClip.FadeDirection.Out:
                 {
                     canvasGroup.alpha = 1.0f;
                     break;
@@ -72,17 +77,36 @@ public class FaderPlayableBehaviour : PlayableBehaviour
         float time = (float)playable.GetTime();
         float t01 = time / duration;
 
-
         switch (fadeDirection)
         {
-            case FaderPlayableAsset.FadeDirection.In:
+            case FaderClip.FadeDirection.In:
                 {
-                    canvasGroup.alpha = (1.0f - t01);
+                    // 基本はリニア
+                    float alpha = (1.0f - t01);
+
+                    // カーブ情報を使うなら
+                    if (isUseCurve)
+                    {
+                        alpha = faderCurve.Evaluate(t01);
+                    }
+
+                    canvasGroup.alpha = alpha;
+
                     break;
                 }
-            case FaderPlayableAsset.FadeDirection.Out:
+            case FaderClip.FadeDirection.Out:
                 {
-                    canvasGroup.alpha = t01;
+                    // 基本はリニア
+                    float alpha = t01;
+
+                    // カーブ情報を使うなら
+                    if (isUseCurve)
+                    {
+                        alpha = faderCurve.Evaluate(t01);
+                    }
+
+                    canvasGroup.alpha = alpha;
+
                     break;
                 }
         }

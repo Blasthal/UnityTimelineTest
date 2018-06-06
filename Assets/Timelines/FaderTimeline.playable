@@ -106,6 +106,9 @@ MonoBehaviour:
   m_Name: FaderPlayableAsset
   m_EditorClassIdentifier: 
   fadeDirection: 0
+  template:
+    canvasGroup: {fileID: 0}
+    fadeDirection: 0
 --- !u!114 &114711120186404010
 MonoBehaviour:
   m_ObjectHideFlags: 1
