@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RyutoAOC
+  m_Controller: {fileID: 9100000, guid: 5b605e9b79d335f48938779593542570, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b3a28823bbf5bf048bc182558f3be137, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2cf38eb11c87be0499ea79d6c10f1c21, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bf0565d1c96270d4bb1707ccf4238dfe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5688ae1ac8e72144687166f2062bd017, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2f47235507f78de4abf829ff6b6e3f55, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 67d02c0dcd75e5a4199273b620993bda, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 27b94435e8eaa454995cb483fda1337e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0d47fb7236fef9744b8673ae92e47a9f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cf586e95a4c57ed45aabd62e72eaabcf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b08b6e17985eac64ab8419924360a4b6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2007771a57509d84dad3cc2d839bf7a5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 636484ae4a59e0c47b8d6019c96f9688, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 59ca6fa3c979445489c1569e5171466b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e1da33f0790456946b16e7e0bcce27c1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 49541e9b3a87cb749a6c6c1e093e0fba, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 893d12a5c235b03498f95527a200729c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c94e093c3d130a34a9bd13ec8587e701, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ad2467402068df94296768cd7c86af3d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f50a4b46700e3dd4386cf32d0e84bc54, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3ef0d73b952eea4180e3af34c1226d7, type: 2}
